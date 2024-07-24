@@ -3,10 +3,17 @@ import "./CartItems.css";
 import cross_icon from "../Assets/cart_cross_icon.png";
 import { ShopContext } from "../../Context/ShopContext";
 import { backend_url, currency } from "../../App";
+import { useNavigate } from "react-router-dom";
 
 const CartItems = () => {
   const {products} = useContext(ShopContext);
   const {cartItems,removeFromCart,getTotalCartAmount} = useContext(ShopContext);
+  const navigate = useNavigate()
+
+  const handlePayment = ()=>{
+    alert("Payment Successfull")
+    navigate('/')
+  }
 
   return (
     <div className="cartitems">
@@ -57,7 +64,7 @@ const CartItems = () => {
               <h3>{currency}{getTotalCartAmount()}</h3>
             </div>
           </div>
-          <button>PROCEED TO CHECKOUT</button>
+          <button onClick={handlePayment}>PROCEED TO CHECKOUT</button>
         </div>
         <div className="cartitems-promocode">
           <p>If you have a promo code, Enter it here</p>
