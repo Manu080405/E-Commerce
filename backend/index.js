@@ -13,8 +13,6 @@ app.use(cors());
 // Database Connection With MongoDB
 mongoose.connect("mongodb+srv://manu0804:manu@cluster0.uyaxilh.mongodb.net/ECommerce?retryWrites=true&w=majority&appName=Cluster0");
 
-// paste your mongoDB Connection string above with password
-// password should not contain '@' special character
 
 
 //Image Storage Engine 
